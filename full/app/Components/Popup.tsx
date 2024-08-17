@@ -8,6 +8,10 @@ export default function Popup(props: any){
     const handleAddCard = () => {
         // console.log("Add card");
         // console.log(cardDetail);
+        if(cardDetail === ""){
+            alert("Please enter a task");
+            return;
+        }
         const existingCards = JSON.parse(localStorage.getItem("dynamoNotesCards") || "[]");
         const newCard = {
             id: existingCards.length + 1,
