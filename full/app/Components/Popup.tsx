@@ -17,9 +17,9 @@ export default function Popup(props: any){
         }
         const newCards = [newCard, ...existingCards];
         localStorage.setItem("dynamoNotesCards", JSON.stringify(newCards));
-        window.location.reload();
+        // window.location.reload();
 
-        // props.setShowPopup(false);
+        props.setShowPopup(false);
     }
 
 

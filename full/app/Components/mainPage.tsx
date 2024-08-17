@@ -5,13 +5,13 @@ import Card from "./Card";
 
 
 
-function MainPage(){
+function MainPage(props: any){
     const [cards, setCards] = useState<any>([]);
     
     useEffect(() => {
         const allCards = JSON.parse(localStorage.getItem("dynamoNotesCards") || "[]");
         setCards(allCards);
-    }, []);
+    }, [props.showPopup]);
 
 
 
@@ -27,7 +27,7 @@ function MainPage(){
                         <span className=" text-white opacity-15 text-2xl font-bold ml-20">
                             {card.id}
                         </span>
-                        <Card cardData={card.cardData} id={card.id} createdAt={card.createdAt} done={card.done} />
+                        <Card cardData={card.cardData} id={card.id} createdAt={card.createdAt} done={card.done} cards={cards} setCards={setCards} />
                     </div>
                 ))}
             </div>

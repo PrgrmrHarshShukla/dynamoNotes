@@ -15,7 +15,7 @@ export default function Home() {
       <div className="w-[100%] h-auto min-h-screen bg-gray-700 relative flex flex-col justify-between items-center">
         {showPopup && <Popup showPopup={showPopup} setShowPopup={setShowPopup} />}
         <Header showPopup={showPopup} setShowPopup={setShowPopup} />
-        <MainPage />
+        <MainPage showPopup={showPopup} setShowPopup={setShowPopup} />
         <Footer />
     </div>
   );
