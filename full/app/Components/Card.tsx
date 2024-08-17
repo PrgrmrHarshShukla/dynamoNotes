@@ -10,10 +10,15 @@ function Card(props: any){
 
     const handleDelete = (e: any) => {
         e.preventDefault();
-        const existingCards = [...props.cards];
-        const updatedCards = existingCards.filter((card: any) => card.id !== props.id);
-        localStorage.setItem("dynamoNotesCards", JSON.stringify(updatedCards));
-        props.setCards(updatedCards);
+        try {
+            const existingCards = [...props.cards];
+            const updatedCards = existingCards.filter((card: any) => card.id !== props.id);
+            localStorage.setItem("dynamoNotesCards", JSON.stringify(updatedCards));
+            props.setCards(updatedCards);    
+        } 
+        catch (error) {
+            
+        }
     }
 
 

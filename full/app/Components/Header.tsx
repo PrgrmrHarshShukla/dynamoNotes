@@ -1,11 +1,16 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 
 // import '@fortawesome/fontawesome-free/css/all.css'
 
 function Header(props: any){
-    const cardsLen = JSON.parse(localStorage.getItem("dynamoNotesCards") || "[]").length;
+    const [cardsLen, setCardsLen] = useState(0);
+    useEffect(() => {
+        const cLen = JSON.parse(localStorage.getItem("dynamoNotesCards") || "[]").length;
+        setCardsLen(cLen);
+    }, [])
     
     return(
         <div className="w-[100%] z-40 h-[8vh] border-b-2 border-black flex flex-row justify-around items-center shadow-lg bg-gray-800">
