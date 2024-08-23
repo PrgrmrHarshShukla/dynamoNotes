@@ -34,8 +34,8 @@ function MainPage(props: any){
                     ))}
                 </div>
                 :
-                <div className="w-[100%] h-auto flex flex-col justify-start items-center gap-2">
-                    <span className=" text-white opacity-90 text-2xl font-bold ml-20">
+                <div className="w-[100%] h-auto flex flex-col justify-center items-center gap-2">
+                    <span className=" text-white text-2xl font-bold">
                         No cards!
                     </span>
                 </div>
